@@ -1,0 +1,15 @@
+version: 2
+services:
+   nginx:
+     image: nginx:1.9
+     ports:
+       - "8443:443"
+     volumes:
+       - nginx:/etc/nginx/conf.d
+       - /etc/letsencrypt/live/tsdocker.talentscreen.io:/etc/nginx/certs
+    
+    app:
+      build: app
+
+
+
